@@ -1,2 +1,2 @@
 # rn-starter
-React Native project for learning its fundamentals.
+React Native project for understanding its fundamentals.
