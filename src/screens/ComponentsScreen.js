@@ -2,8 +2,6 @@ import React from "react";
 import { Text, StyleSheet, View } from "react-native";
 
 const ComponentsScreen = () => {
-  //Functional component.
-
   const name = "Sahil";
 
   return (
@@ -15,7 +13,6 @@ const ComponentsScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  //'styles' variable created from the 'StyleSheet' element.
   Heading: {
     fontSize: 45,
   },
@@ -24,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ComponentsScreen; //Exporting the component.
+export default ComponentsScreen;

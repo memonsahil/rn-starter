@@ -11,9 +11,8 @@ import TextScreen from "./src/screens/TextScreen";
 import BoxScreen from "./src/screens/BoxScreen";
 
 const navigator = createStackNavigator(
-  //'navigator' variable created from the 'createStackNavigator' element.
   {
-    Home: HomeScreen, //Providing a name to every component.
+    Home: HomeScreen,
     Components: ComponentsScreen,
     List: ListScreen,
     Image: ImageScreen,
@@ -26,9 +25,9 @@ const navigator = createStackNavigator(
   {
     initialRouteName: "Home",
     defaultNavigationOptions: {
-      title: "App",
+      title: "RN Starter",
     },
   }
 );
 
-export default createAppContainer(navigator); //Exporting the 'createAppContainer' element with the 'navigator' variable as a parameter.
+export default createAppContainer(navigator);

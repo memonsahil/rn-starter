@@ -1,17 +1,16 @@
 import React, { useReducer } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import ColorCounter from "../components/ColorCounter";
 
-const COLOR_INCREMENT = 20; //All-caps usally means its a special variable often used to represent a configuration VALUE.
+const COLOR_INCREMENT = 20;
 
 const reducer = (state, action) => {
-  //'reducer' function with 'state' and 'action' objects as parameters (following community convention).
-  //state === { red: number, green: number, blue: number };
-  //action === { type: 'change_red' || 'change_green' || 'change_blue', payload: 20 || -20 };
+  // state === { red: number, green: number, blue: number }
+  // action === { type: 'change_red' || 'change_green' || 'change_blue', payload: 20 || -20 }
 
   switch (action.type) {
     case "change_red":
-      return state.red + action.payload > 255 || state.red + action.payload < 0 //Ternary expression used here for validating the range (0-255).
+      return state.red + action.payload > 255 || state.red + action.payload < 0
         ? state
         : { ...state, red: state.red + action.payload };
     case "change_green":
@@ -30,18 +29,15 @@ const reducer = (state, action) => {
 };
 
 const SquareScreen = () => {
-  //Parent component.
-
-  const [state, dispatch] = useReducer(reducer, { red: 0, green: 0, blue: 0 }); //'useReducer()' is a function hook with the 'reducer' function and an object containing initial values of the colors as parameters.
+  const [state, dispatch] = useReducer(reducer, { red: 0, green: 0, blue: 0 });
   const { red, green, blue } = state;
 
   return (
-    //Child component.
     <View>
       <ColorCounter
         onIncrease={() =>
           dispatch({ type: "change_red", payload: COLOR_INCREMENT })
-        } //The 'dispatch' function relates to the 'action' object in the 'reducer' function's parameters.
+        }
         onDecrease={() =>
           dispatch({ type: "change_red", payload: -1 * COLOR_INCREMENT })
         }
@@ -66,16 +62,22 @@ const SquareScreen = () => {
         color="Blue"
       />
       <View
-        style={{
-          height: 150,
-          width: 150,
-          backgroundColor: `rgb(${red}, ${green}, ${blue})`,
-        }}
+        style={
+          (styles.square,
+          {
+            backgroundColor: `rgb(${red}, ${green}, ${blue})`,
+          })
+        }
       />
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  square: {
+    height: 150,
+    width: 150,
+  },
+});
 
 export default SquareScreen;

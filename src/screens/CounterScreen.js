@@ -1,9 +1,9 @@
 import React, { useReducer } from "react";
-import { Text, View, StyleSheet, Button } from "react-native";
+import { Text, View, Button } from "react-native";
 
 const reducer = (state, action) => {
-  //state === { counter: number };
-  //action === { type: 'add' || 'subtract', payload: 1 || -1};
+  // state === { counter: number }
+  // action === { type: 'add' || 'subtract', payload: 1 || -1}
 
   switch (action.type) {
     case "add":
@@ -16,7 +16,7 @@ const reducer = (state, action) => {
 };
 
 const CounterScreen = () => {
-  const [state, dispatch] = useReducer(reducer, { counter: 0 }); //Using 'useReducer' for state management.
+  const [state, dispatch] = useReducer(reducer, { counter: 0 });
 
   return (
     <View>
@@ -36,7 +36,5 @@ const CounterScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default CounterScreen;

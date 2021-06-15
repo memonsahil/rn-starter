@@ -1,10 +1,9 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { Text, StyleSheet, FlatList } from "react-native";
 
 const ListScreen = () => {
   const friends = [
-    //Array of objects.
-    { name: "Friend 1", age: 20 }, //Objects with two props - name and age.
+    { name: "Friend 1", age: 20 },
     { name: "Friend 2", age: 23 },
     { name: "Friend 3", age: 25 },
     { name: "Friend 4", age: 44 },
@@ -22,11 +21,10 @@ const ListScreen = () => {
   ];
 
   return (
-    <FlatList //'FlatList' element.
-      keyExtractor={(friend) => friend.name} //'KeyExtractor' is used to provide a key to every object. Each key for each object has to be unique, in this case the 'name' prop for each object is unique. Therefore, that's the key.
-      data={friends} //'data' is used to point to the array of objects.
+    <FlatList
+      keyExtractor={(friend) => friend.name}
+      data={friends}
       renderItem={({ item }) => {
-        //Object destructuring done to get 'item'. 'renderItem' renders the array.
         return (
           <Text style={styles.textStyle}>
             {item.name} - Age {item.age}

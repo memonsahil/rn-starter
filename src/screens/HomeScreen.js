@@ -1,14 +1,12 @@
 import React from "react";
-import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, View, Button } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
-  //Object destructuring done from 'props.navigation' to 'navigation'.
-
   return (
     <View>
       <Text style={styles.text}>Hello World!</Text>
       <Button
-        onPress={() => navigation.navigate("Components")} //Therefore, 'props.navigation.naviagate()' turns to 'navigation.navigate()'.
+        onPress={() => navigation.navigate("Components")}
         title="Go to Components Demo"
       />
       <Button

@@ -1,14 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View } from "react-native";
 import ImageDetail from "../components/ImageDetail";
 
 const ImageScreen = () => {
-  //Parent component.
   return (
     <View>
-      <ImageDetail //Imported child component.
-        title="Forest" //Sending these created props (along with their values) to the child component.
-        imageSource={require("../../assets/forest.jpg")} //'require()' function used to point to its location.
+      <ImageDetail
+        title="Forest"
+        imageSource={require("../../assets/forest.jpg")}
         imageScore={9}
       />
       <ImageDetail
@@ -24,7 +23,5 @@ const ImageScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default ImageScreen;
