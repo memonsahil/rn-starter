@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
 import ColorCounter from "../components/ColorCounter";
 
 const COLOR_INCREMENT = 20;
@@ -10,16 +10,16 @@ const reducer = (state, action) => {
 
   switch (action.type) {
     case "change_red":
-      return state.red + action.payload > 255 || state.red + action.payload < 0
+      return state.red + action.payload > 255 && state.red + action.payload < 0
         ? state
         : { ...state, red: state.red + action.payload };
     case "change_green":
-      return state.green + action.payload > 255 ||
+      return state.green + action.payload > 255 &&
         state.green + action.payload < 0
         ? state
         : { ...state, green: state.green + action.payload };
     case "change_blue":
-      return state.blue + action.payload > 255 ||
+      return state.blue + action.payload > 255 &&
         state.blue + action.payload < 0
         ? state
         : { ...state, blue: state.blue + action.payload };
@@ -62,22 +62,14 @@ const SquareScreen = () => {
         color="Blue"
       />
       <View
-        style={
-          (styles.square,
-          {
-            backgroundColor: `rgb(${red}, ${green}, ${blue})`,
-          })
-        }
+        style={{
+          height: 150,
+          width: 150,
+          backgroundColor: `rgb(${red}, ${green}, ${blue})`,
+        }}
       />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  square: {
-    height: 150,
-    width: 150,
-  },
-});
 
 export default SquareScreen;
