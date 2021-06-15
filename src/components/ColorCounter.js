@@ -1,9 +1,8 @@
 import React from "react";
-import { Text, View, StyleSheet, Button } from "react-native";
+import { Text, View, Button } from "react-native";
 
 const ColorCounter = ({ color, onIncrease, onDecrease }) => {
   return (
-    //String interpolation requires curley braces around a string.
     <View>
       <Text>{color}</Text>
       <Button
@@ -21,7 +20,5 @@ const ColorCounter = ({ color, onIncrease, onDecrease }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default ColorCounter;
