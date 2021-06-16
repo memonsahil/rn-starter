@@ -4,7 +4,7 @@
 ![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)
 
-A [React Native](https://reactnative.dev/) app for learning its fundamentals. Built using [Expo](https://expo.io). This project is no longer maintained and is used for reference only.
+A [React Native](https://reactnative.dev/) app for learning its fundamentals. Built using [Expo](https://expo.io).
 
 ## Setup
 
